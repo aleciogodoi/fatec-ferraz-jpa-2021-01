@@ -1,10 +1,24 @@
 package com.eclipselink.entity;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+@Table
 public class Funcionario {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idFuncionario;
+
 	private String nome;
 	private double salario;
 	private String cargo;
+	
+	public Funcionario() {	
+	}
 	
 	public Funcionario(int idFuncionario, String nome, double salario, String cargo) {
 		super();
