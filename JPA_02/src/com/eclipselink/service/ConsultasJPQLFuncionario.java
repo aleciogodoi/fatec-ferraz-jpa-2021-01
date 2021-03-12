@@ -42,11 +42,11 @@ public class ConsultasJPQLFuncionario {
 		
 		// Funcionarios / Where / Between / Like / Order
 		Query query4 = entitymanager
-				.createQuery("Select e from Funcionario e " + "Where e.salario Between :salarioIni and :salarioFim "
-						+ " and e.nome like '%m%'" + "Order by e.salario desc");
+				.createQuery("Select e from Funcionario e "); /*+ "Where e.salario Between :salarioIni and :salarioFim "
+						+ " and e.nome like '%m%'" + "Order by e.salario desc");*/
 
-		query4.setParameter("salarioIni", 7000);
-		query4.setParameter("salarioFim", 10000);
+		//query4.setParameter("salarioIni", 7000);
+		//query4.setParameter("salarioFim", 10000);
 		List<Funcionario> funcionarios = (List<Funcionario>) query4.getResultList();
 
 		System.out.println("\nFuncionarios / Where / Between / Like / Order");
@@ -55,6 +55,10 @@ public class ConsultasJPQLFuncionario {
 		for (Funcionario func : funcionarios) {
 			System.out.println(func.getIdFuncionario() + ", " + func.getNome() + ", " + func.getCargo() + ", "
 					+ func.getSalario());
+		}
+		
+		for(int i= 0; i < funcionarios.size(); i++) {
+			System.out.println(funcionarios.get(i));
 		}
 		 
 	}
