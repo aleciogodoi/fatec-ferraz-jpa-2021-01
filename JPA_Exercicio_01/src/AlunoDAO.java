@@ -26,8 +26,19 @@ public class AlunoDAO {
 		
 	}
 
-	public void delete(int id) {
-		
+	public void delete(String id) {
+		// Criando uma conexão com a nossa base de dados
+		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("JPA_01");
+
+		// Criando objeto para fazer o gerenciamento das Classes/Entidades
+		EntityManager entitymanager = emfactory.createEntityManager();
+		Query query = entitymanager.createNamedQuery("delete Aluno id");
+		query.setParameter("ra", id);
+		entitymanager.getTransaction().begin();   
+		query.executeUpdate();
+		entitymanager.getTransaction().commit();   
+		entitymanager.close();	// fechando o objeto para gerenciamento das entidades
+		emfactory.close();      // fechando a conexão com o Banco de Dados		
 	}
 
 	public Aluno find(String ra) {

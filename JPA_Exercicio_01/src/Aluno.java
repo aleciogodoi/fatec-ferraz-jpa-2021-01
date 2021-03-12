@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name = "find Aluno id", query = "Select a from Aluno a where a.ra = :ra"),
 	@NamedQuery(name = "get Alunos", query = "Select a from Aluno a"),
+	@NamedQuery(name = "delete Aluno id", query = "Delete from Aluno where ra = :ra")
 })
 public class Aluno {
 	

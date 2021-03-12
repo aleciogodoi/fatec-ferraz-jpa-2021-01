@@ -11,6 +11,7 @@ public class Teste {
 		//System.out.println(alunoDAO.find("0987-Y"));
 		//System.out.println(alunoDAO.find("0111-K"));
 		
+		alunoDAO.delete("0111-K");
 		for (Aluno aluno: alunoDAO.getAlunos()) {
 			System.out.println(aluno);
 		}
