@@ -1,9 +1,15 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table
+@NamedQueries({
+	@NamedQuery(name = "find Aluno id", query = "Select a from Aluno a where a.ra = :ra"),
+	@NamedQuery(name = "get Alunos", query = "Select a from Aluno a"),
+})
 public class Aluno {
 	
 	// Chave Primaria RA
@@ -28,6 +34,13 @@ public class Aluno {
 		this.celular = celular;
 		this.nota1 = nota1;
 		this.nota2 = nota2;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Aluno [ra=" + ra + ", nome=" + nome + ", email=" + email + ", celular=" + celular + ", nota1=" + nota1
+				+ ", nota2=" + nota2 + "]";
 	}
 
 	public String getRa() {

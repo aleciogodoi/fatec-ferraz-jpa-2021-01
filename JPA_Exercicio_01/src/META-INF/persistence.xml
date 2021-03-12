@@ -7,7 +7,7 @@
 		<class>Aluno</class>
 	<properties>
 		<property name="javax.persistence.jdbc.url"
-			value="jdbc:sqlite:c:/Bancos de Dados/SQLite3/jpadb_01.db" />
+			value="jdbc:sqlite:c:/Bancos de Dados/SQLite3/jpadb_aluno.db" />
 		<property name="javax.persistence.jdbc.driver"
 			value="org.sqlite.JDBC" />
 		<property name="eclipselink.logging.level" value="FINE" />
