@@ -17,12 +17,14 @@ public class Teste {
 			opcao = Integer.valueOf(JOptionPane.showInputDialog(menu));
 			switch (opcao) {
 			case 1:
-				entradaDados();
+				entradaDados(true);
 				alunoDAO.insert(aluno);
 				break;
 			case 2:
 				entradaRA();
 				aluno = alunoDAO.find(aluno.getRa());
+				JOptionPane.showMessageDialog(null, aluno);
+				entradaDados(false);
 				alunoDAO.update(aluno);
 				break;
 			case 3:
@@ -39,13 +41,21 @@ public class Teste {
 
 	}
 	
-	public static void entradaDados() {
-		entradaRA();
-		aluno.setNome(JOptionPane.showInputDialog("Nome"));
-		aluno.setEmail(JOptionPane.showInputDialog("Email"));
-		aluno.setCelular(JOptionPane.showInputDialog("Celular"));
-		aluno.setNota1(Double.valueOf(JOptionPane.showInputDialog("Nota 1")));
-		aluno.setNota2(Double.valueOf(JOptionPane.showInputDialog("Nota 2")));
+	public static void entradaDados(boolean insert) {
+		if (insert) {
+			entradaRA();
+			aluno.setNome(JOptionPane.showInputDialog("Nome"));
+			aluno.setEmail(JOptionPane.showInputDialog("Email"));
+			aluno.setCelular(JOptionPane.showInputDialog("Celular"));
+			aluno.setNota1(Double.valueOf(JOptionPane.showInputDialog("Nota 1")));
+			aluno.setNota2(Double.valueOf(JOptionPane.showInputDialog("Nota 2")));
+		} else {
+			aluno.setNome(JOptionPane.showInputDialog("Nome",aluno.getNome()));
+			aluno.setEmail(JOptionPane.showInputDialog("Email",aluno.getEmail()));
+			aluno.setCelular(JOptionPane.showInputDialog("Celular",aluno.getCelular()));
+			aluno.setNota1(Double.valueOf(JOptionPane.showInputDialog("Nota 1",aluno.getNota1())));
+			aluno.setNota2(Double.valueOf(JOptionPane.showInputDialog("Nota 2",aluno.getNota2())));
+		}
 	}
 	
 	public static void entradaRA() {
