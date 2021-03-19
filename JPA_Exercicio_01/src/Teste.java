@@ -12,9 +12,11 @@ public class Teste {
 		//System.out.println(alunoDAO.find("0111-K"));
 		
 		alunoDAO.delete("0111-K");
+		alunoDAO.update(new Aluno("1234-X","Jose da Silva JR","jose.silva@gmail.com", "(11)9999-7799", 5.6, 8.2));
+		alunoDAO.updateQuery(new Aluno("0987-Y","Ana Maria Braga","ana.maria@gmail.com", "(11)7777-8888", 7.2, 7.5));
+
 		for (Aluno aluno: alunoDAO.getAlunos()) {
 			System.out.println(aluno);
 		}
 	}
-
 }
