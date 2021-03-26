@@ -6,14 +6,14 @@
 	<persistence-unit name="JPA_07">
 	  <class>com.eclipselink.entity.Departamento</class>
 	  <class>com.eclipselink.entity.Funcionario</class>
+	  
       <properties>
-		<property name="javax.persistence.jdbc.url"
-			value="jdbc:sqlite:c:/Bancos de Dados/SQLite3/jpadb_07.db" />
-		<property name="javax.persistence.jdbc.driver"
-			value="org.sqlite.JDBC" />
-		<property name="eclipselink.logging.level" value="FINE" />
-		<property name="eclipselink.ddl-generation"
-			value="create-tables" />		
+	     <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpadb?useTimezone=true&amp;serverTimezone=UTC"/>
+         <property name="javax.persistence.jdbc.user" value="ale"/> 
+         <property name="javax.persistence.jdbc.password" value="ale"/> 
+         <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+         <property name="eclipselink.logging.level" value="FINE"/>
+         <property name="eclipselink.ddl-generation" value="create-tables"/>
        </properties>
 	</persistence-unit>
 </persistence>
@@ -21,7 +21,7 @@
 <!--
 	<properties>
 		<property name="javax.persistence.jdbc.url"
-			value="jdbc:sqlite:c:/Bancos de Dados/SQLite3/jpadb_04.db" />
+			value="jdbc:sqlite:c:/Bancos de Dados/SQLite3/jpadb_07.db" />
 		<property name="javax.persistence.jdbc.driver"
 			value="org.sqlite.JDBC" />
 		<property name="eclipselink.logging.level" value="FINE" />
