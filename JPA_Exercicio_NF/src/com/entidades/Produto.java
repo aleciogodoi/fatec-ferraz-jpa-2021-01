@@ -4,22 +4,22 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Cliente {
+public class Produto {
 	
 	@Id
 	private int id;
 	
 	private String nome;
-	private String email;
+	private float precoUnitario;
 	
-	public Cliente() {
+	public Produto() {
 	}
 
-	public Cliente(int id, String nome, String email) {
+	public Produto(int id, String nome, float precoUnitario) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.email = email;
+		this.precoUnitario = precoUnitario;
 	}
 
 	public int getId() {
@@ -38,17 +38,17 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public float getPrecoUnitario() {
+		return precoUnitario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPrecoUnitario(float precoUnitario) {
+		this.precoUnitario = precoUnitario;
 	}
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", nome=" + nome + ", email=" + email + "]";
+		return "Produto [id=" + id + ", nome=" + nome + ", precoUnitario=" + precoUnitario + "]";
 	}
 	
 }
